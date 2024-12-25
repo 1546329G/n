@@ -25,17 +25,24 @@
     <script>
         function reproducirVideo() {
             var videoContainer = document.getElementById("video-container");
-
-            // Verifica si el iframe ya ha sido insertado
+            
+            // Verifica si ya existe un iframe
             if (!videoContainer.querySelector("iframe")) {
                 var iframe = document.createElement('iframe');
                 iframe.width = "100%";
-                iframe.height = "315"; // Asegúrate de que el iframe tiene suficiente altura
-                iframe.src = "https://www.youtube.com/embed/NwxYAqncfEA"; // URL del video con autoplay
+                iframe.height = "315";  // Tamaño adecuado del video
+                iframe.src = "https://www.youtube.com/embed/NwxYAqncfEA?autoplay=1";  // URL del video con autoplay
                 iframe.frameborder = "0";
                 iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
                 iframe.allowFullscreen = true;
-                videoContainer.appendChild(iframe); // Inserta el iframe en el contenedor
+
+                // Inserta el iframe en el contenedor
+                videoContainer.appendChild(iframe);
+                
+                // Verificación de que el iframe se ha agregado correctamente
+                console.log('Iframe agregado con éxito.');
+            } else {
+                console.log('El video ya está cargado.');
             }
         }
     </script>
