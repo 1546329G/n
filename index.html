@@ -16,15 +16,8 @@
         <div class="pie">
             <!-- Más información o el enlace -->
         </div>
-        <div id="video-container" style="display:none;">
-            <iframe 
-                width="100%" 
-                height="200" 
-                src="https://www.youtube.com/embed/NwxYAqncfEA?autoplay=1"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+        <div id="video-container">
+            <!-- El iframe del video se insertará aquí mediante JavaScript -->
         </div>
         <h5>tengo hambre bri</h5>
     </div>
@@ -32,7 +25,17 @@
     <script>
         function reproducirVideo() {
             var videoContainer = document.getElementById("video-container");
-            videoContainer.style.display = "block"; // Muestra el iframe
+            // Inserta el iframe solo si no está ya insertado
+            if (!videoContainer.innerHTML) {
+                var iframe = document.createElement('iframe');
+                iframe.width = "100%";
+                iframe.height = "200";
+                iframe.src = "https://www.youtube.com/embed/NwxYAqncfEA?autoplay=1"; // URL del video con autoplay
+                iframe.frameborder = "0";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                videoContainer.appendChild(iframe);
+            }
         }
     </script>
 </body>
