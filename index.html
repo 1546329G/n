@@ -18,14 +18,6 @@
         </div>
         <div id="video-container">
             <!-- El iframe del video se insertará aquí mediante JavaScript -->
-             <iframe 
-        width="100%" 
-        height="200" 
-        src="https://www.youtube.com/embed/NwxYAqncfEA"
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-    </iframe>
         </div>
         <h5>tengo hambre bri</h5>
     </div>
@@ -42,11 +34,10 @@
                 iframe.frameborder = "0";
                 iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
                 iframe.allowFullscreen = true;
-                videoContainer.appendChild(iframe);
+                videoContainer.appendChild(iframe); // Inserta el iframe en el contenedor
             }
         }
     </script>
 </body>
 </html>
-
 
