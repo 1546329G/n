@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,44 +7,28 @@
     <title>Tarjeta de Navidad</title>
 </head>
 <body>
-    <div class="tarjeta" onclick="reproducirVideo()">
+    <div class="tarjeta">
         <div class="titulo">Feliz Navidad Gorda</div>
         <div class="cuerpo">
-            <img src="1.jpg" alt="Imagen de Navidad">
-            Eres ojo alegre, pero te quiero
+           <img src="1.jpg" alt="Muestra">
+           Eres ojo alegre, pero te quiero
         </div>
         <div class="pie">
-            <!-- Más información o el enlace -->
+              <!--<a href="#">Más información</a>-->
         </div>
-        <div id="video-container">
-            <!-- El iframe del video se insertará aquí mediante JavaScript -->
-        </div>
-        <h5>tengo hambre bri</h5>
+        <iframe 
+        width="100%" 
+        height="200" 
+        src="https://www.youtube.com/embed/NwxYAqncfEA"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+     <h5>tengo ambre bri</h5>
     </div>
 
-    <script>
-        function reproducirVideo() {
-            var videoContainer = document.getElementById("video-container");
-            
-            // Verifica si ya existe un iframe
-            if (!videoContainer.querySelector("iframe")) {
-                var iframe = document.createElement('iframe');
-                iframe.width = "100%";
-                iframe.height = "315";  // Tamaño adecuado del video
-                iframe.src = "https://www.youtube.com/embed/NwxYAqncfEA?autoplay=1";  // URL del video con autoplay
-                iframe.frameborder = "0";
-                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-                iframe.allowFullscreen = true;
 
-                // Inserta el iframe en el contenedor
-                videoContainer.appendChild(iframe);
-                
-                // Verificación de que el iframe se ha agregado correctamente
-                console.log('Iframe agregado con éxito.');
-            } else {
-                console.log('El video ya está cargado.');
-            }
-        }
-    </script>
+
 </body>
 </html>
+
