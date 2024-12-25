@@ -25,12 +25,13 @@
     <script>
         function reproducirVideo() {
             var videoContainer = document.getElementById("video-container");
-            // Inserta el iframe solo si no está ya insertado
-            if (!videoContainer.innerHTML) {
+
+            // Verifica si el iframe ya ha sido insertado
+            if (!videoContainer.querySelector("iframe")) {
                 var iframe = document.createElement('iframe');
                 iframe.width = "100%";
-                iframe.height = "200";
-                iframe.src = "https://www.youtube.com/embed/NwxYAqncfEA?autoplay=1"; // URL del video con autoplay
+                iframe.height = "315"; // Asegúrate de que el iframe tiene suficiente altura
+                iframe.src = "https://www.youtube.com/embed/NwxYAqncfEA"; // URL del video con autoplay
                 iframe.frameborder = "0";
                 iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
                 iframe.allowFullscreen = true;
@@ -40,4 +41,3 @@
     </script>
 </body>
 </html>
-
